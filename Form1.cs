@@ -22,12 +22,22 @@ namespace UserMaintenance
             label1.Text = Resource.FullName; 
             button1.Text = Resource.Add;
             button2.Text = Resource.Write;
+            button3.Text = Resource.Delete;
             listBox1.DataSource = users;
             listBox1.ValueMember = "ID";
             listBox1.DisplayMember = "FullName";
             button1.Click += Button1_Click;
             button2.Click += Button2_Click;
+            button3.Click += Button3_Click;
         
+        }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+
+                int index = listBox1.SelectedIndex;
+                users.RemoveAt(index);
+
         }
 
         private void Button2_Click(object sender, EventArgs e)
